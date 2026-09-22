@@ -22,7 +22,7 @@ public class Servidor {
 
         System.out.println("Esperando integrantes en el puerto 81...");
 
-        // Hilo para que Yahani pueda escribir mensajes
+        // Hilo para  poder escribir mensajes
         Thread enviarMensajes = new Thread(() -> {
 
             Scanner teclado = new Scanner(System.in);
@@ -31,7 +31,7 @@ public class Servidor {
 
                 String mensaje = teclado.nextLine();
 
-                // Si Yahani escribe salir
+                // Si Yahani(yo) escribo salir
                 if (mensaje.equalsIgnoreCase("salir")) {
 
                     System.out.println("Yahani salió del chat.");
@@ -58,7 +58,6 @@ public class Servidor {
                     try {
                         servidor.close();
                     } catch (IOException e) {
-                        // Ignorar
                     }
 
                     break;
@@ -145,7 +144,7 @@ public class Servidor {
                         break;
                     }
 
-                    // Mostrar mensaje en la consola de Yahani
+                    // Mostrar mensaje en mi consola
                     System.out.println("Cliente: " + mensaje);
 
                     // Reenviar mensaje a los demás clientes
